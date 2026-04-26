@@ -566,8 +566,8 @@ const APP_CONFIG = {
       label: "Shooter training"
     },
     {
-      code: "GEAR-202",
-      label: "Builder track"
+      code: "ADMIN-101",
+      label: "Admin testing"
     }
   ]
 };
@@ -653,11 +653,6 @@ function renderCodeScreen(error = "") {
         </div>
         <button class="primary-button" type="submit">Unlock Torque</button>
         <div class="error" role="alert">${error}</div>
-        <div class="code-list" aria-label="Available demo codes">
-          ${APP_CONFIG.accessCodes
-            .map((item) => `<code>${item.code}</code> <span>${item.label}</span>`)
-            .join("")}
-        </div>
       </form>
     </section>
   `;
@@ -668,7 +663,7 @@ function renderCodeScreen(error = "") {
     const allowed = APP_CONFIG.accessCodes.some((item) => item.code === code);
 
     if (!allowed) {
-      renderCodeScreen("That code is not active yet. Try TORQUE-101 or GEAR-202.");
+      renderCodeScreen("That code is not active yet.");
       return;
     }
 
@@ -710,7 +705,8 @@ function renderWorkspace() {
   const lesson = LESSONS[state.currentLesson];
   const progress = getProgress();
   const learnerName = escapeHtml(state.learnerName);
-  const proofReady = hasProof(lesson, state);
+  const adminMode = isAdmin(state);
+  const proofReady = adminMode || hasProof(lesson, state);
   const maxUnlocked = getMaxUnlocked(state);
 
   app.innerHTML = `
@@ -724,7 +720,7 @@ function renderWorkspace() {
           </div>
         </div>
         <h2>Level map</h2>
-        <small>${progress.done} of ${progress.total} levels cleared</small>
+        <small>${adminMode ? "Admin mode: all levels unlocked" : `${progress.done} of ${progress.total} levels cleared`}</small>
         <nav class="lesson-nav" aria-label="Level navigation">
           ${LESSONS.map((item, index) => lessonTab(item, index, maxUnlocked)).join("")}
         </nav>
@@ -734,6 +730,7 @@ function renderWorkspace() {
         <header class="topbar">
           <div class="workspace-title">
             <span class="pill">Level ${lesson.level} / ${LESSONS.length - 1}</span>
+            ${adminMode ? '<span class="pill">Admin testing</span>' : ""}
             <h1>${escapeHtml(lesson.title)}</h1>
             <p class="lesson-copy"><strong>Goal:</strong> ${escapeHtml(lesson.goal)}</p>
           </div>
@@ -776,7 +773,7 @@ function renderWorkspace() {
         <section class="upload-panel">
           <div class="panel-heading">
             <h2>Proof to unlock next level</h2>
-            <span class="pill">${proofReady ? "Ready" : "Locked"}</span>
+            <span class="pill">${adminMode ? "Admin open" : proofReady ? "Ready" : "Locked"}</span>
           </div>
           <p class="upload-requirement">${escapeHtml(lesson.uploadRequirement)}</p>
           ${proofInputMarkup(lesson)}
@@ -804,7 +801,7 @@ function lessonTab(lesson, index, maxUnlocked) {
   const isCurrent = index === state.currentLesson;
   const complete = hasProof(lesson, state);
   const locked = index > maxUnlocked;
-  const status = locked ? "Locked" : complete ? "Cleared" : isCurrent ? "Current quest" : "Unlocked";
+  const status = isAdmin(state) ? "Admin open" : locked ? "Locked" : complete ? "Cleared" : isCurrent ? "Current quest" : "Unlocked";
 
   return `
     <button
@@ -961,7 +958,7 @@ function bindWorkspaceEvents() {
 
   app.querySelector("[data-next]").addEventListener("click", () => {
     const lesson = LESSONS[state.currentLesson];
-    if (!hasProof(lesson, state)) return;
+    if (!isAdmin(state) && !hasProof(lesson, state)) return;
 
     if (state.currentLesson === LESSONS.length - 1) {
       state.complete = true;
@@ -977,9 +974,9 @@ function renderProofButtonState() {
   const lesson = LESSONS[state.currentLesson];
   const next = app.querySelector("[data-next]");
   const status = app.querySelector(".upload-panel .panel-heading .pill");
-  const proofReady = hasProof(lesson, state);
+  const proofReady = isAdmin(state) || hasProof(lesson, state);
   if (next) next.disabled = !proofReady;
-  if (status) status.textContent = proofReady ? "Ready" : "Locked";
+  if (status) status.textContent = isAdmin(state) ? "Admin open" : proofReady ? "Ready" : "Locked";
 }
 
 function previewMarkup(lesson, upload) {
@@ -1016,10 +1013,16 @@ function getProgress() {
 }
 
 function getMaxUnlocked(targetState) {
+  if (isAdmin(targetState)) return LESSONS.length - 1;
+
   for (let index = 0; index < LESSONS.length; index += 1) {
     if (!hasProof(LESSONS[index], targetState)) return index;
   }
   return LESSONS.length - 1;
+}
+
+function isAdmin(targetState = state) {
+  return targetState.accessCode === "ADMIN-101";
 }
 
 function hasProof(lesson, targetState) {

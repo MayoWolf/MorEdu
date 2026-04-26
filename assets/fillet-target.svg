@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Onshape fillet target</title>
+  <desc id="desc">A softened CAD part with highlighted rounded edges.</desc>
+  <rect width="900" height="600" fill="#f8fbfd"/>
+  <path d="M204 376 Q204 225 328 148 Q345 138 370 138 H552 Q579 138 598 156 L688 238 Q708 256 708 284 V372 Q708 401 684 418 L570 494 Q552 506 528 506 H344 Q318 506 298 490 L225 429 Q204 411 204 376Z" fill="#dbe8ee" stroke="#17313b" stroke-width="8"/>
+  <path d="M306 302 Q306 257 345 238 H558 Q594 238 604 276 V382 Q604 419 568 431 H348 Q306 414 306 370Z" fill="#66b8c9" stroke="#17313b" stroke-width="8"/>
+  <circle cx="390" cy="337" r="42" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <circle cx="525" cy="337" r="42" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <path d="M302 304 Q312 260 348 238" fill="none" stroke="#cc6b49" stroke-width="12" stroke-linecap="round"/>
+  <path d="M604 278 Q594 248 558 238" fill="none" stroke="#cc6b49" stroke-width="12" stroke-linecap="round"/>
+  <path d="M604 382 Q596 420 568 431" fill="none" stroke="#cc6b49" stroke-width="12" stroke-linecap="round"/>
+  <text x="290" y="535" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2c6e7f">Add 0.15 in fillets to outer edges</text>
+</svg>

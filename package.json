@@ -1,0 +1,11 @@
+{
+  "name": "moredue-torque-onshape",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node scripts/dev-server.js",
+    "dev": "node scripts/dev-server.js"
+  }
+}

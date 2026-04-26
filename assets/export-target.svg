@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Onshape export target</title>
+  <desc id="desc">A completed CAD part with an export badge.</desc>
+  <rect width="900" height="600" fill="#f8fbfd"/>
+  <rect x="98" y="92" width="704" height="410" rx="8" fill="#ffffff" stroke="#9bb4c3" stroke-width="4"/>
+  <rect x="98" y="92" width="704" height="62" fill="#17313b"/>
+  <circle cx="136" cy="123" r="10" fill="#cc6b49"/>
+  <circle cx="168" cy="123" r="10" fill="#e6ba63"/>
+  <circle cx="200" cy="123" r="10" fill="#7fc6d6"/>
+  <path d="M298 348 Q298 252 380 202 H532 Q612 202 626 286 V362 Q616 428 544 444 H376 Q312 426 298 348Z" fill="#7fc6d6" stroke="#17313b" stroke-width="8"/>
+  <circle cx="410" cy="326" r="38" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <circle cx="520" cy="326" r="38" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <g transform="translate(585 360)">
+    <rect width="150" height="86" rx="8" fill="#2c6e7f"/>
+    <path d="M75 16 V52 M54 36 L75 57 L96 36" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="42" y="76" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffffff">STL</text>
+  </g>
+  <text x="162" y="548" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2c6e7f">Export or screenshot your finished part</text>
+</svg>

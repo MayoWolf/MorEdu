@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Onshape sketch target</title>
+  <desc id="desc">A dimensioned practice sketch with a block, two holes, a slot, and angled top profile.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#d8e2ea" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#2c6e7f"/>
+    </marker>
+  </defs>
+  <rect width="900" height="600" fill="#f8fbfd"/>
+  <rect x="48" y="48" width="804" height="504" fill="url(#grid)" stroke="#9bb4c3" stroke-width="2"/>
+  <g transform="translate(140 120)">
+    <path d="M80 330 L80 155 L220 70 L440 70 L560 165 L560 330 Z" fill="#ffffff" stroke="#17313b" stroke-width="10" stroke-linejoin="round"/>
+    <circle cx="220" cy="205" r="50" fill="none" stroke="#17313b" stroke-width="10"/>
+    <circle cx="435" cy="205" r="50" fill="none" stroke="#17313b" stroke-width="10"/>
+    <rect x="240" y="290" width="160" height="58" rx="29" fill="none" stroke="#17313b" stroke-width="10"/>
+    <path d="M80 365 H560" stroke="#2c6e7f" stroke-width="5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="292" y="405" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2c6e7f">6.00 in</text>
+    <path d="M600 70 V330" stroke="#2c6e7f" stroke-width="5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="630" y="210" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2c6e7f">3.00 in</text>
+    <path d="M220 205 H435" stroke="#cc6b49" stroke-width="4" stroke-dasharray="14 12"/>
+    <text x="278" y="184" font-family="Inter, Arial, sans-serif" font-size="28" fill="#cc6b49">equal holes</text>
+  </g>
+</svg>

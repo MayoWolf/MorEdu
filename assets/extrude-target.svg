@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Onshape extrude target</title>
+  <desc id="desc">An isometric extruded version of the sketch target with holes and a slot.</desc>
+  <defs>
+    <linearGradient id="front" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7fc6d6"/>
+      <stop offset="1" stop-color="#2d7890"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" x2="1">
+      <stop offset="0" stop-color="#276073"/>
+      <stop offset="1" stop-color="#16414e"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="#f8fbfd"/>
+  <path d="M188 384 L188 214 L330 126 L570 126 L702 224 L702 390 L574 468 L310 468 Z" fill="#dfeaf0"/>
+  <path d="M188 384 L310 468 L574 468 L702 390 L702 224 L574 302 L310 302 L188 214 Z" fill="url(#side)" opacity=".96"/>
+  <path d="M188 214 L330 126 L570 126 L702 224 L574 302 L310 302 Z" fill="#9dd7df"/>
+  <path d="M188 384 L188 214 L310 302 L310 468 Z" fill="#225365"/>
+  <path d="M310 302 L310 468 L574 468 L574 302 Z" fill="url(#front)"/>
+  <ellipse cx="384" cy="382" rx="43" ry="54" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <ellipse cx="505" cy="382" rx="43" ry="54" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <rect x="405" y="424" width="90" height="46" rx="23" fill="#f8fbfd" stroke="#17313b" stroke-width="8"/>
+  <path d="M188 214 L330 126 L570 126 L702 224 L574 302 L310 302 Z" fill="none" stroke="#17313b" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M188 214 L188 384 L310 468 H574 L702 390 V224" fill="none" stroke="#17313b" stroke-width="8" stroke-linejoin="round"/>
+  <text x="262" y="532" font-family="Inter, Arial, sans-serif" font-size="34" fill="#2c6e7f">Extrude depth: 0.50 in</text>
+</svg>

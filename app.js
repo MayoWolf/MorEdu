@@ -1,11 +1,48 @@
 const VIDEO_URLS = {
-  introShooter: "YOUR_CUSTOM_VIDEO_EMBED_URL",
-  onshapeSetup: "https://www.youtube.com/embed/mm5sHRyXJB8",
-  mkcadSetup: "https://www.youtube.com/embed/azJQzVFIwPw",
-  mkcadApp: "https://www.youtube.com/embed/x75vioN_SNY",
-  bearingImport: "https://www.youtube.com/embed/LVjyXv30m3g",
-  assemblyMates: "https://www.youtube.com/embed/L6HO0DswUkU",
-  placeholder: "https://www.youtube.com/embed/mm5sHRyXJB8"
+  introShooter: "YOUR_CUSTOM_UNLISTED_YOUTUBE_EMBED_URL?start=0&end=45",
+  onshapeSetup: "https://www.youtube.com/embed/mm5sHRyXJB8?start=0&end=45",
+  sketchBasics: "https://www.youtube.com/embed/2utLjjkXpIg?start=0&end=45",
+  dimensionConstraints: "https://www.youtube.com/embed/2utLjjkXpIg?start=45&end=90",
+  extrudeBasics: "https://www.youtube.com/embed/Us-zzwf8EmQ?start=0&end=45",
+  filletBasics: "https://www.youtube.com/embed/71KW30PDb5o?start=0&end=45",
+  sketchOnFaceRemove: "https://www.youtube.com/embed/2utLjjkXpIg?start=90&end=135",
+  circularPattern: "https://www.youtube.com/embed/BFURYp4Rgck?start=0&end=45",
+  linearPattern: "https://www.youtube.com/embed/uMM5SU9g8Is?start=0&end=45",
+  mirrorPart: "https://www.youtube.com/embed/GI3BFimvVV8?start=0&end=45",
+  assemblyMates: "https://www.youtube.com/embed/L6HO0DswUkU?start=0&end=45",
+  mkcadSetup: "https://www.youtube.com/embed/azJQzVFIwPw?start=0&end=45",
+  mkcadApp: "https://www.youtube.com/embed/x75vioN_SNY?start=0&end=45",
+  bearingImport: "https://www.youtube.com/embed/LVjyXv30m3g?start=0&end=45",
+  replicateAssembly: "https://www.youtube.com/embed/O0WzrxAaPYY?start=0&end=45",
+  finalChecklist: "YOUR_CUSTOM_UNLISTED_YOUTUBE_EMBED_URL?start=0&end=45",
+  submitProof: "YOUR_CUSTOM_UNLISTED_YOUTUBE_EMBED_URL?start=0&end=45",
+  placeholder: "https://www.youtube.com/embed/2utLjjkXpIg?start=0&end=45"
+};
+
+const LEVEL_VIDEO_KEYS = {
+  0: "introShooter",
+  1: "onshapeSetup",
+  2: "sketchBasics",
+  3: "dimensionConstraints",
+  4: "extrudeBasics",
+  5: "filletBasics",
+  6: "sketchOnFaceRemove",
+  7: "circularPattern",
+  8: "linearPattern",
+  9: "mirrorPart",
+  10: "assemblyMates",
+  11: "mkcadSetup",
+  12: "bearingImport",
+  13: "mkcadApp",
+  14: "mkcadApp",
+  15: "mkcadApp",
+  16: "mkcadApp",
+  17: "mkcadApp",
+  18: "assemblyMates",
+  19: "replicateAssembly",
+  20: "finalChecklist",
+  21: "finalChecklist",
+  22: "submitProof"
 };
 
 const IMAGE_URLS = {
@@ -82,7 +119,7 @@ const LESSONS = [
     level: 2,
     title: "Sketch the Side Plate Outline",
     goal: "Create the basic 2D profile of one shooter side panel.",
-    videoKey: "placeholder",
+    videoKey: "sketchBasics",
     imageKey: "sidePlateOutlineReference",
     torqueText:
       "Start with only the outside shape. Do not add every hole at once. Good CAD is built in layers: outline first, important holes second, small holes last.",
@@ -104,7 +141,7 @@ const LESSONS = [
     level: 3,
     title: "Dimension and Constrain the Side Plate",
     goal: "Teach that sketches need control, not just lines.",
-    videoKey: "placeholder",
+    videoKey: "dimensionConstraints",
     imageKey: "constrainedPlateReference",
     torqueText:
       "A sketch that is not constrained can randomly move later. In FRC, that means holes stop lining up, shafts no longer fit, and the assembly becomes painful to fix.",
@@ -126,7 +163,7 @@ const LESSONS = [
     level: 4,
     title: "Extrude the Side Plate",
     goal: "Turn the 2D sketch into a 3D part.",
-    videoKey: "placeholder",
+    videoKey: "extrudeBasics",
     imageKey: "extrudedPlateReference",
     torqueText:
       "Extrude gives the plate thickness. For this training model, exact material does not matter as much as learning the workflow.",
@@ -146,7 +183,7 @@ const LESSONS = [
     level: 5,
     title: "Add Fillets to the Plate",
     goal: "Clean the outside shape and make it look like a real robot plate.",
-    videoKey: "placeholder",
+    videoKey: "filletBasics",
     imageKey: "filletedPlateReference",
     torqueText:
       "Real robot plates usually have rounded edges. Fillets make the CAD cleaner and help remove sharp stress points.",
@@ -166,7 +203,7 @@ const LESSONS = [
     level: 6,
     title: "Add Main Bearing Holes",
     goal: "Place the shaft locations.",
-    videoKey: "placeholder",
+    videoKey: "sketchOnFaceRemove",
     imageKey: "bearingHoleReference",
     torqueText:
       "The bearing holes are the most important part of this plate. They control the shaft positions, wheel spacing, and compression path of the shooter.",
@@ -188,7 +225,7 @@ const LESSONS = [
     level: 7,
     title: "Add Bolt Holes Around the Bearings",
     goal: "Teach bolt circle / mounting hole patterns.",
-    videoKey: "placeholder",
+    videoKey: "circularPattern",
     imageKey: "boltPatternReference",
     torqueText:
       "Bearings and gussets do not magically attach. Small bolt holes are what let the plate connect to real hardware.",
@@ -209,7 +246,7 @@ const LESSONS = [
     level: 8,
     title: "Add Mounting Holes and Lightening Holes",
     goal: "Make the plate look closer to real FRC sheet metal/polycarb.",
-    videoKey: "placeholder",
+    videoKey: "linearPattern",
     imageKey: "lighteningHoleReference",
     torqueText:
       "Patterns save time. In FRC CAD, repeated holes are everywhere, so learning patterns makes you much faster.",
@@ -229,7 +266,7 @@ const LESSONS = [
     level: 9,
     title: "Mirror or Create the Second Side Plate",
     goal: "Make the opposite side plate.",
-    videoKey: "placeholder",
+    videoKey: "mirrorPart",
     imageKey: "mirroredPlateReference",
     torqueText:
       "A shooter needs two side plates. The shafts pass between them, so both sides need matching hole locations.",
@@ -433,7 +470,7 @@ const LESSONS = [
     level: 19,
     title: "Use Replicate or Patterns in the Assembly",
     goal: "Teach assembly efficiency.",
-    videoKey: "assemblyMates",
+    videoKey: "replicateAssembly",
     imageKey: "replicateReference",
     torqueText:
       "If you manually mate every single repeated part, you will waste hours. Pattern and replicate tools make robot CAD much faster.",
@@ -452,7 +489,7 @@ const LESSONS = [
     level: 20,
     title: "Organize the Assembly Tree",
     goal: "Teach cleanup and readable CAD.",
-    videoKey: "introShooter",
+    videoKey: "finalChecklist",
     imageKey: "treeReference",
     torqueText:
       "Your CAD is not done if only you can understand it. FRC is a team sport. Clean naming helps the next student fix, inspect, or manufacture your design.",
@@ -472,7 +509,7 @@ const LESSONS = [
     level: 21,
     title: "Final Shooter Check",
     goal: "Make students inspect their own work.",
-    videoKey: "introShooter",
+    videoKey: "finalChecklist",
     imageKey: "finalCheckReference",
     torqueText:
       "Before you submit, inspect it like a design lead. Does it look buildable? Are the shafts supported? Are the wheels placed with a purpose? Can someone else understand what you made?",
@@ -497,7 +534,7 @@ const LESSONS = [
     level: 22,
     title: "Final Submission",
     goal: "Turn in final proof.",
-    videoKey: "introShooter",
+    videoKey: "submitProof",
     imageKey: "finalSubmissionReference",
     torqueText:
       "You finished the shooter training path. You now know the core workflow: sketch custom plates, extrude and cut holes, import FRC parts, mate them into an assembly, and organize the final CAD.",
@@ -785,11 +822,15 @@ function lessonTab(lesson, index, maxUnlocked) {
 
 function videoMarkup(lesson) {
   const src = VIDEO_URLS[lesson.videoKey] || VIDEO_URLS.placeholder;
-  if (!src || src.includes("YOUR_CUSTOM_VIDEO_EMBED_URL")) {
+  if (
+    !src ||
+    src.includes("YOUR_CUSTOM_VIDEO_EMBED_URL") ||
+    src.includes("YOUR_CUSTOM_UNLISTED_YOUTUBE_EMBED_URL")
+  ) {
     return `
       <div class="video-placeholder">
         <strong>Custom shooter video slot</strong>
-        <span>Replace VIDEO_URLS.${escapeHtml(lesson.videoKey)} with your 30-60 second embed URL.</span>
+        <span>Replace VIDEO_URLS.${escapeHtml(lesson.videoKey)} with your 30-45 second embed URL.</span>
       </div>
     `;
   }

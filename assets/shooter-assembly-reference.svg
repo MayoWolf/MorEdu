@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Shooter side plate assembly reference</title>
+  <desc id="desc">A simplified assembly view showing two side plates with aligned holes and shafts.</desc>
+  <rect width="1100" height="720" fill="#f8fbfd"/>
+  <g transform="translate(160 92)">
+    <path d="M62 472 V170 L200 86 H570 L706 186 V472 Z" fill="#56636d" opacity=".86" stroke="#17313b" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M260 540 V238 L398 154 H768 L904 254 V540 Z" fill="#9aa8b1" opacity=".68" stroke="#17313b" stroke-width="10" stroke-linejoin="round"/>
+    <g stroke="#17313b" stroke-width="13" stroke-linecap="round">
+      <line x1="160" y1="226" x2="768" y2="302"/>
+      <line x1="160" y1="338" x2="768" y2="414"/>
+      <line x1="160" y1="450" x2="768" y2="526"/>
+    </g>
+    <g fill="#dbe7ed" stroke="#17313b" stroke-width="8">
+      <circle cx="160" cy="226" r="42"/>
+      <circle cx="160" cy="338" r="42"/>
+      <circle cx="160" cy="450" r="42"/>
+      <circle cx="768" cy="302" r="42"/>
+      <circle cx="768" cy="414" r="42"/>
+      <circle cx="768" cy="526" r="42"/>
+    </g>
+    <g fill="none" stroke="#e6ba63" stroke-width="8" stroke-dasharray="18 14">
+      <circle cx="160" cy="226" r="78"/>
+      <circle cx="160" cy="338" r="78"/>
+      <circle cx="160" cy="450" r="78"/>
+    </g>
+    <g font-family="Inter, Arial, sans-serif" font-size="28" fill="#2c6e7f" font-weight="700">
+      <text x="38" y="128">Left Shooter Side Plate</text>
+      <text x="560" y="198">Right Shooter Side Plate</text>
+      <text x="294" y="608">Three shaft lines must pass through matching bearing holes</text>
+    </g>
+  </g>
+</svg>

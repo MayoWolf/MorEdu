@@ -27,7 +27,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -76,6 +77,8 @@ button {
 .upload-panel,
 .video-panel,
 .target-panel,
+.steps-panel,
+.torque-panel,
 .progress-panel,
 .complete-panel {
   background: var(--panel);
@@ -110,7 +113,17 @@ button {
   padding: 0 16px;
 }
 
-.field input[type="text"]:focus {
+.field textarea {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  min-height: 132px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+
+.field input[type="text"]:focus,
+.field textarea:focus {
   border-color: var(--aqua);
   box-shadow: 0 0 0 4px rgba(44, 110, 127, 0.12);
   outline: 0;
@@ -134,6 +147,7 @@ button {
   color: #ffffff;
 }
 
+button:disabled,
 .primary-button:disabled {
   cursor: not-allowed;
   opacity: 0.45;
@@ -311,6 +325,11 @@ button {
   border-left: 5px solid var(--gold);
 }
 
+.lesson-tab.is-locked {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .workspace-main {
   display: grid;
   gap: 24px;
@@ -338,9 +357,26 @@ button {
 .video-panel,
 .target-panel,
 .upload-panel,
+.steps-panel,
+.torque-panel,
 .progress-panel,
 .complete-panel {
   overflow: hidden;
+}
+
+.torque-panel {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 70px minmax(0, 1fr);
+  padding: 18px;
+}
+
+.torque-panel p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
 .panel-heading {
@@ -367,14 +403,49 @@ button {
   width: 100%;
 }
 
+.video-placeholder {
+  align-content: center;
+  aspect-ratio: 16 / 9;
+  background: #17313b;
+  color: #ffffff;
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  text-align: center;
+}
+
+.video-placeholder span {
+  color: rgba(255, 255, 255, 0.74);
+}
+
 .target-panel img {
   display: block;
   height: auto;
   width: 100%;
 }
 
+.step-list {
+  color: var(--muted);
+  display: grid;
+  gap: 10px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 18px 28px 22px 44px;
+}
+
+.step-list li::marker {
+  color: var(--aqua);
+  font-weight: 800;
+}
+
 .upload-panel {
   padding-bottom: 18px;
+}
+
+.upload-requirement {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 16px 18px 0;
 }
 
 .upload-drop {
@@ -395,6 +466,8 @@ button {
 }
 
 .preview {
+  display: grid;
+  gap: 12px;
   margin: 0 18px;
 }
 
@@ -414,6 +487,10 @@ button {
   color: var(--aqua);
   font-weight: 800;
   padding: 16px;
+}
+
+.response-field {
+  margin: 18px;
 }
 
 .actions {
@@ -513,6 +590,10 @@ button {
   .topbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .torque-panel {
+    grid-template-columns: 1fr;
   }
 
   .lesson-nav {

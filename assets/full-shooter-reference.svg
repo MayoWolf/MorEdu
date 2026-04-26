@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Simplified FRC shooter reference</title>
+  <desc id="desc">A simplified FRC shooter assembly with two side plates, shafts, green wheels, white wheels, bearings, spacers, motors, and pulleys.</desc>
+  <defs>
+    <linearGradient id="plate" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6f7d86"/>
+      <stop offset="1" stop-color="#2d3941"/>
+    </linearGradient>
+    <linearGradient id="greenWheel" x1="0" x2="1">
+      <stop offset="0" stop-color="#69d982"/>
+      <stop offset="1" stop-color="#1f8a46"/>
+    </linearGradient>
+    <linearGradient id="whiteWheel" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9e3e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="720" fill="#f8fbfd"/>
+  <g transform="translate(120 92)">
+    <path d="M70 466 V174 L196 94 H524 L642 184 V466 Z" fill="url(#plate)" opacity=".9" stroke="#17313b" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M306 518 V226 L432 146 H760 L878 236 V518 Z" fill="url(#plate)" opacity=".72" stroke="#17313b" stroke-width="10" stroke-linejoin="round"/>
+    <g stroke="#17313b" stroke-width="12" stroke-linecap="round">
+      <line x1="143" y1="220" x2="760" y2="272"/>
+      <line x1="138" y1="330" x2="760" y2="382"/>
+      <line x1="146" y1="432" x2="760" y2="484"/>
+    </g>
+    <g>
+      <circle cx="143" cy="220" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+      <circle cx="138" cy="330" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+      <circle cx="146" cy="432" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+      <circle cx="760" cy="272" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+      <circle cx="760" cy="382" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+      <circle cx="760" cy="484" r="36" fill="#dbe7ed" stroke="#17313b" stroke-width="8"/>
+    </g>
+    <g stroke="#17313b" stroke-width="7">
+      <circle cx="324" cy="235" r="50" fill="url(#greenWheel)"/>
+      <circle cx="476" cy="248" r="50" fill="url(#greenWheel)"/>
+      <circle cx="618" cy="260" r="50" fill="url(#greenWheel)"/>
+      <circle cx="330" cy="345" r="43" fill="url(#whiteWheel)"/>
+      <circle cx="485" cy="358" r="43" fill="url(#whiteWheel)"/>
+      <circle cx="628" cy="370" r="43" fill="url(#whiteWheel)"/>
+    </g>
+    <g fill="#e6ba63" stroke="#17313b" stroke-width="5">
+      <rect x="250" y="204" width="28" height="64" rx="6"/>
+      <rect x="400" y="216" width="28" height="64" rx="6"/>
+      <rect x="550" y="228" width="28" height="64" rx="6"/>
+      <rect x="254" y="318" width="28" height="58" rx="6"/>
+      <rect x="405" y="330" width="28" height="58" rx="6"/>
+      <rect x="554" y="342" width="28" height="58" rx="6"/>
+    </g>
+    <g>
+      <rect x="880" y="318" width="100" height="74" rx="10" fill="#cc6b49" stroke="#17313b" stroke-width="7"/>
+      <circle cx="880" cy="354" r="34" fill="#2c6e7f" stroke="#17313b" stroke-width="7"/>
+      <circle cx="806" cy="382" r="30" fill="#2c6e7f" stroke="#17313b" stroke-width="7"/>
+      <path d="M806 352 C840 330 862 330 880 320" fill="none" stroke="#17313b" stroke-width="11" stroke-linecap="round"/>
+      <path d="M806 412 C840 432 866 426 880 392" fill="none" stroke="#17313b" stroke-width="11" stroke-linecap="round"/>
+    </g>
+    <g font-family="Inter, Arial, sans-serif" font-size="24" fill="#17313b" font-weight="700">
+      <text x="86" y="142">Side plates</text>
+      <text x="284" y="154">Green shooter wheels</text>
+      <text x="842" y="300">Motor</text>
+      <text x="120" y="548">Shafts, bearings, spacers, and COTS parts from MKCad/FRC libraries</text>
+    </g>
+  </g>
+</svg>
